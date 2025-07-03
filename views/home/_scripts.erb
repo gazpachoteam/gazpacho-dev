@@ -1,0 +1,20 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const header = document.getElementById('main-header');
+    const logo = document.getElementById('main-logo');
+    function onScroll() {
+      if (window.scrollY > 10) {
+        header.classList.add('bg-white', 'shadow', 'h-10', 'pt-6', 'pb-6', 'scrolled');
+        header.classList.remove('whiteboard-bg', 'h-14');
+        logo.classList.add('h-8', 'w-8');
+        logo.classList.remove('h-10', 'w-10');
+      } else {
+        header.classList.remove('bg-white', 'shadow', 'h-10', 'pt-6', 'pb-6', 'scrolled');
+        header.classList.add('whiteboard-bg', 'h-14');
+        logo.classList.remove('h-8', 'w-8');
+        logo.classList.add('h-10', 'w-10');
+      }
+    }
+    window.addEventListener('scroll', onScroll);
+  });
+</script>

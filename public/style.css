@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'SciFly Sans';
+  src: url('/SciFly-Sans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('/Mona-Sans.var.woff2') format('woff2');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+}
+
+.logo-font {
+  font-family: 'SciFly Sans', Arial, sans-serif;
+}
+
+.call-to-action-font {
+  font-family: 'SciFly Sans', Arial, sans-serif;
+  font-weight: 700;
+}
+
+.whiteboard-bg {
+  background-color: #fff;
+  background-image: url("data:image/svg+xml;utf8,<svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='0' y='0' width='40' height='40' fill='white'/><path d='M 40 0 L 0 0 0 40' fill='none' stroke='%23e5e7eb' stroke-width='1'/></svg>");
+  background-size: 40px 40px;
+} 

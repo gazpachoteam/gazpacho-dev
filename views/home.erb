@@ -1,0 +1,175 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Gazpacho Dev</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/style.css?v=8"/>
+    <style>
+      body {
+        font-family: 'Mona Sans', Arial, sans-serif;
+      }
+      /* Sticky Note Styles */
+      .sticky-notes-center-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-width: 180px;
+        width: 290px;
+        height: 220px;
+        position: relative;
+      }
+      .sticky-notes-row {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 40px;
+        width: 100%;
+        position: relative;
+      }
+      .sticky-container {
+        width: 110px;
+        min-width: 90px;
+        position: relative;
+        transition: box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .sticky-outer {
+        display: flex;
+        position: relative;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .sticky {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      .sticky:before {
+        box-shadow: -2px 2px 15px 0 rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.25);
+        content: '';
+        width: 90%;
+        left: 5px;
+        height: 83%;
+        position: absolute;
+        top: 30%;
+        z-index: 0;
+        border-radius: 0.75rem;
+      }
+      .sticky-content {
+        background: linear-gradient(
+          180deg,
+          rgba(187, 235, 255, 1) 0%,
+          rgba(187, 235, 255, 1) 12%,
+          rgba(170, 220, 241, 1) 75%,
+          rgba(195, 229, 244, 1) 100%
+        );
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        font-family: 'SciFly Sans', Arial, sans-serif;
+        font-size: 1rem;
+        clip-path: url(#stickyClip);
+        position: relative;
+        z-index: 1;
+        padding: 0.5rem 0.25rem;
+        text-align: center;
+        color: #2d3a3a;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        line-height: 1.1;
+      }
+      .sticky-desc {
+        font-family: 'Mona Sans', Arial, sans-serif;
+        font-size: 0.85rem;
+      }
+      .sticky-content .sticky-icon {
+        font-size: 1.1em;
+        margin-bottom: 0.15em;
+        color: #2d3a3a;
+      }
+      .sticky-content .sticky-desc {
+        font-size: 0.60em;
+        font-weight: 400;
+        margin-top: 0.15em;
+      }
+      /* Add a little random rotation for visual interest, but no overlap */
+      .sticky-random-1 { transform: rotate(-4deg);}
+      .sticky-random-2 { transform: rotate(3deg);}
+      .sticky-random-3 { transform: rotate(-2deg);}
+      @media (max-width: 767px) {
+        .sticky-notes-center-area {
+          width: 100%;
+          min-width: 0;
+          max-width: 100vw;
+          height: auto;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+        }
+        .sticky-notes-row {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 12px;
+          width: 100%;
+          min-width: 0;
+        }
+        .sticky-container {
+          width: 100%;
+          min-width: 0;
+        }
+        .sticky-content {
+          font-size: 1rem;
+        }
+      }
+      @media screen and (min-width: 640px) {
+        .sticky:before {
+          height: 79%;
+          width: 90%;
+        }
+        .sticky-content {
+          font-size: 0.85rem;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        .sticky:before {
+          height: 75%;
+          width: 90%;
+        }
+        .sticky-content {
+          font-size: 0.95rem;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        .sticky:before {
+          height: 73%;
+          width: 90%;
+        }
+        .sticky-content {
+          font-size: 1.05rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white text-black">
+    <%= erb :"home/_header" %>
+    <%= erb :"home/_what_we_do" %>
+    <%= erb :"home/_call_to_action_processes" %>
+    <%= erb :"home/_services" %>
+    <%= erb :"home/_contact" %>
+    <%= erb :"home/_customers" %>
+    <%= erb :"shared/_footer" %>
+    <%= erb :"home/_scripts" %>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<div class="min-h-screen flex flex-col">
+  <header id="main-header" class="whiteboard-bg px-4 md:px-8 pt-4 pb-2 flex justify-between items-center fixed top-0 left-0 w-screen z-10 h-14 transition-all duration-300">
+    <div class="flex items-center">
+      <img id="main-logo" src="isologo-gazpacho.png" alt="Logo" class="h-10 w-10 mr-2 transition-all duration-300" />
+      <span class="logo-font tracking-tight text-[2rem]">
+        gazpacho dev
+      </span>
+    </div>
+    <div class="flex items-center">
+      <button class="bg-[#006e00ff] text-white text-xs md:text-sm px-4 py-1.5 rounded-full font-medium mr-2 md:mr-4 transition-colors duration-150 hover:bg-[#669600ff]">
+        Contacto
+      </button>
+      <button class="text-gray-400 hover:text-black transition-colors duration-150">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+  <!-- Hero with sticky notes -->
+  <section class="whiteboard-bg flex-1 flex items-center px-4 md:px-14">
+    <div class="mx-auto flex flex-col md:flex-row lg:items-center lg:justify-between gap-8 w-full">
+      <!-- Left: Hero text -->
+      <div class="block w-full lg:w-1/2 justify-center">
+        <div>
+          <h1 class="font-display text-3xl md:text-6xl font-medium tracking-tight text-balance text-neutral-950">
+            Tecnología para la transformación digital y de negocio
+          </h1>
+          <p class="text-neutral-600 text-md md:text-xl text-justify pr-10">
+            Nos especializamos en ofrecer soluciones que optimizan los flujos de trabajo y mejoran los procesos empresariales, permitiendo que las organizaciones operen de manera más eficiente y eficaz.
+          </p>
+        </div>
+      </div>
+      <!-- Right: Sticky notes, aligned to the top -->
+      <div class="hidden lg:block w-full lg:w-1/2 justify-center items-start">
+        <!-- Desktop Sticky Notes (triangle, rotated, top offset) -->
+        <div class="hidden md:block">
+          <div class="sticky-notes-row">
+            <!-- Sticky Note 1 -->
+            <div class="sticky-container sticky-random-1" style="top: 40px; position: relative;">
+              <div class="sticky-outer">
+                <div class="sticky">
+                  <svg width="0" height="0">
+                    <defs>
+                      <clipPath id="stickyClip" clipPathUnits="objectBoundingBox">
+                        <path
+                          d="M 0 0 Q 0 0.69, 0.03 0.96 0.03 0.96, 1 0.96 Q 0.96 0.69, 0.96 0 0.96 0, 0 0"
+                          stroke-linejoin="round"
+                          stroke-linecap="square"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <div class="sticky-content">
+                    <span class="sticky-icon"><i class="fas fa-trophy"></i></span>
+                    Business Insight
+                    <div class="sticky-desc">Powerful analytics and audit trails built in</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Sticky Note 2 -->
+            <div class="sticky-container sticky-random-2" style="top: 0px; position: relative;">
+              <div class="sticky-outer">
+                <div class="sticky">
+                  <svg width="0" height="0">
+                    <defs>
+                      <clipPath id="stickyClip" clipPathUnits="objectBoundingBox">
+                        <path
+                          d="M 0 0 Q 0 0.69, 0.03 0.96 0.03 0.96, 1 0.96 Q 0.96 0.69, 0.96 0 0.96 0, 0 0"
+                          stroke-linejoin="round"
+                          stroke-linecap="square"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <div class="sticky-content">
+                    <span class="sticky-icon"><i class="fas fa-users"></i></span>
+                    Ready for Tomorrow
+                    <div class="sticky-desc">Easily add features & adapt to change</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Sticky Note 3 -->
+            <div class="sticky-container sticky-random-3" style="top: 40px; position: relative;">
+              <div class="sticky-outer">
+                <div class="sticky">
+                  <svg width="0" height="0">
+                    <defs>
+                      <clipPath id="stickyClip" clipPathUnits="objectBoundingBox">
+                        <path
+                          d="M 0 0 Q 0 0.69, 0.03 0.96 0.03 0.96, 1 0.96 Q 0.96 0.69, 0.96 0 0.96 0, 0 0"
+                          stroke-linejoin="round"
+                          stroke-linecap="square"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <div class="sticky-content">
+                    <span class="sticky-icon"><i class="fas fa-lightbulb"></i></span>
+                    Cut Costs, Cut Rework
+                    <div class="sticky-desc">Shared vision eliminates costly mistakes.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile/iPad Sticky Notes (w-full, no rotation, no top offset) -->
+      <div class="block lg:hidden space-y-4 w-full">
+        <div class="sticky-container w-full">
+          <div class="sticky-outer w-full">
+            <div class="sticky w-full">
+              <svg width="0" height="0">
+                <defs>
+                  <clipPath id="stickyClipMobile3" clipPathUnits="objectBoundingBox">
+                    <path
+                      d="M 0 0 Q 0 0.69, 0.03 0.96 0.03 0.96, 1 0.96 Q 0.96 0.69, 0.96 0 0.96 0, 0 0"
+                      stroke-linejoin="round"
+                      stroke-linecap="square"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+              <div class="sticky-content">
+                <span class="sticky-icon"><i class="fas fa-lightbulb"></i></span>
+                Cut Costs, Cut Rework
+                <div class="sticky-desc">Shared vision eliminates costly mistakes.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sticky-container w-full">
+          <div class="sticky-outer w-full">
+            <div class="sticky w-full">
+              <svg width="0" height="0">
+                <defs>
+                  <clipPath id="stickyClipMobile1" clipPathUnits="objectBoundingBox">
+                    <path
+                      d="M 0 0 Q 0 0.69, 0.03 0.96 0.03 0.96, 1 0.96 Q 0.96 0.69, 0.96 0 0.96 0, 0 0"
+                      stroke-linejoin="round"
+                      stroke-linecap="square"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+              <div class="sticky-content">
+                <span class="sticky-icon"><i class="fas fa-trophy"></i></span>
+                Business Insight
+                <div class="sticky-desc">Powerful analytics and audit trails built in</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sticky-container w-full">
+          <div class="sticky-outer w-full">
+            <div class="sticky w-full">
+              <svg width="0" height="0">
+                <defs>
+                  <clipPath id="stickyClipMobile2" clipPathUnits="objectBoundingBox">
+                    <path
+                      d="M 0 0 Q 0 0.69, 0.03 0.96 0.03 0.96, 1 0.96 Q 0.96 0.69, 0.96 0 0.96 0, 0 0"
+                      stroke-linejoin="round"
+                      stroke-linecap="square"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+              <div class="sticky-content">
+                <span class="sticky-icon"><i class="fas fa-users"></i></span>
+                Ready for Tomorrow
+                <div class="sticky-desc">Easily add features & adapt to change</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
