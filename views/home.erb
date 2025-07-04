@@ -5,160 +5,86 @@
     <title>Gazpacho Dev</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css?v=8"/>
     <style>
       body {
         font-family: 'Mona Sans', Arial, sans-serif;
       }
-      /* Sticky Note Styles */
-      .sticky-notes-center-area {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        min-width: 180px;
-        width: 290px;
-        height: 220px;
-        position: relative;
+      ul, li {
+        list-style: none;
       }
-      .sticky-notes-row {
+      ul {
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
+        flex-wrap: wrap;
         justify-content: center;
-        gap: 40px;
-        width: 100%;
+      }
+      ul li a {
+        text-decoration: none;
+        color: #000;
+        background: #ffc;
+        display: block;
+        height: 10em;
+        width: 10em;
+        padding: 1em;
+      }
+      ul li {
+        margin: 1em;
+      }
+      ul li a {
+        text-decoration: none;
+        color: #000;
+        background: #ffc;
+        display: block;
+        height: 10em;
+        width: 10em;
+        padding: 1em;
+        box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+      }
+      ul li a {
+        transform: rotate(-6deg);
+      }
+      ul li:nth-child(even) a {
+        transform: rotate(4deg);
         position: relative;
+        top: 5px;
       }
-      .sticky-container {
-        width: 110px;
-        min-width: 90px;
+      ul li:nth-child(3n) a {
+        transform: rotate(-3deg);
         position: relative;
-        transition: box-shadow 0.2s;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        top: -5px;
       }
-      .sticky-outer {
-        display: flex;
+      ul li:nth-child(5n) a {
+        transform: rotate(5deg);
         position: relative;
-        width: 100%;
-        align-items: flex-start;
-        justify-content: flex-start;
+        top: -10px;
       }
-      .sticky {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-      }
-      .sticky:before {
-        box-shadow: -2px 2px 15px 0 rgba(0, 0, 0, 0.5);
-        background-color: rgba(0, 0, 0, 0.25);
-        content: '';
-        width: 90%;
-        left: 5px;
-        height: 83%;
-        position: absolute;
-        top: 30%;
-        z-index: 0;
-        border-radius: 0.75rem;
-      }
-      .sticky-content {
-        background: linear-gradient(
-          180deg,
-          rgba(187, 235, 255, 1) 0%,
-          rgba(187, 235, 255, 1) 12%,
-          rgba(170, 220, 241, 1) 75%,
-          rgba(195, 229, 244, 1) 100%
-        );
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        font-family: 'SciFly Sans', Arial, sans-serif;
-        font-size: 1rem;
-        clip-path: url(#stickyClip);
+      ul li a:hover, ul li a:focus {
+        box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+        transform: scale(1.25);
         position: relative;
-        z-index: 1;
-        padding: 0.5rem 0.25rem;
-        text-align: center;
-        color: #2d3a3a;
-        font-weight: 700;
-        letter-spacing: 0.01em;
-        line-height: 1.1;
+        z-index: 5;
       }
-      .sticky-desc {
-        font-family: 'Mona Sans', Arial, sans-serif;
-        font-size: 0.85rem;
+      ul li a {
+        text-decoration: none;
+        color: #000;
+        background: #ffc;
+        display: block;
+        height: 10em;
+        width: 10em;
+        padding: 1em;
+        box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+        transition: transform .15s linear;
       }
-      .sticky-content .sticky-icon {
-        font-size: 1.1em;
-        margin-bottom: 0.15em;
-        color: #2d3a3a;
+      ul li:nth-child(even) a {
+        position: relative;
+        top: 5px;
+        background: #cfc;
       }
-      .sticky-content .sticky-desc {
-        font-size: 0.60em;
-        font-weight: 400;
-        margin-top: 0.15em;
-      }
-      /* Add a little random rotation for visual interest, but no overlap */
-      .sticky-random-1 { transform: rotate(-4deg);}
-      .sticky-random-2 { transform: rotate(3deg);}
-      .sticky-random-3 { transform: rotate(-2deg);}
-      @media (max-width: 767px) {
-        .sticky-notes-center-area {
-          width: 100%;
-          min-width: 0;
-          max-width: 100vw;
-          height: auto;
-          padding-top: 0.5rem;
-          padding-bottom: 0.5rem;
-        }
-        .sticky-notes-row {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 12px;
-          width: 100%;
-          min-width: 0;
-        }
-        .sticky-container {
-          width: 100%;
-          min-width: 0;
-        }
-        .sticky-content {
-          font-size: 1rem;
-        }
-      }
-      @media screen and (min-width: 640px) {
-        .sticky:before {
-          height: 79%;
-          width: 90%;
-        }
-        .sticky-content {
-          font-size: 0.85rem;
-        }
-      }
-      @media screen and (min-width: 768px) {
-        .sticky:before {
-          height: 75%;
-          width: 90%;
-        }
-        .sticky-content {
-          font-size: 0.95rem;
-        }
-      }
-      @media screen and (min-width: 1024px) {
-        .sticky:before {
-          height: 73%;
-          width: 90%;
-        }
-        .sticky-content {
-          font-size: 1.05rem;
-        }
+      ul li:nth-child(3n) a {
+        position: relative;
+        top: -5px;
+        background: #ccf;
       }
     </style>
   </head>
