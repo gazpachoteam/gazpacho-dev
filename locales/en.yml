@@ -1,0 +1,61 @@
+en:
+  home:
+    nav:
+      about: "About"
+      services: "Services"
+      team: "Team"
+      contact: "Contact"
+    header:
+      title: "Technology for digital and business transformation"
+      description: "We specialize in delivering solutions that streamline workflows and enhance business processes, enabling organizations to operate more efficiently and effectively."
+      sticky_notes:
+        note1: "Business Insight"
+        note1_description: "Powerful analytics and audit trails built in"
+        note2: "Ready for Tomorrow"
+        note2_description: "Easily add features & adapt to change"
+        note3: "Cut Costs, Cut Rework"
+        note3_description: "Shared vision eliminates costly mistakes"
+    services:
+      title: "Our services"
+      description: "Our focus is on digital and business transformation, but we also offer specialized consulting and training in Event Modeling and Event Sourcing."
+      service1: "Digital and business transformation"
+      service1_description: "Automate, improve and transform your organization's processes. We can also help you implement, quickly and securely, new processes and services."
+      service2: "Consulting and training"
+      service2_description: "Book our team for an Event Modeling or Event Sourcing session."
+    customers:
+      title: "Our Clients"
+    what_we_do:
+      title: "What we do"
+      description: "We design the solution collaboratively with your team and deliver what you need with a clear budget and predictable delivery times."
+      card1_tile: "Business intelligence"
+      card1_subtitle: "Information flow and processes"
+      card1_description: "The key to improving your organization's processes is in the intelligent management of information. Our analysis, design and development method is oriented to generate analytics and visualizations that allow your team to make informed and strategic decisions."
+      card2_tile: "Collaborative design"
+      card2_subtitle: "Shared understanding"
+      card2_description: "From the first day, we work collaboratively with your team to build a shared map of the components and the functionality of the solution to be implemented. This allows all members to contribute to the design process and understand how the solution will impact their daily work."
+      card3_tile: "Predictable budget and delivery times"
+      card3_subtitle: "No hidden costs"
+      card3_description: "The shared map, developed in collaboration with your team, becomes the basis for calculating the cost of the solution and delivery times. You will always have real-time visibility of the project's progress."
+    team:
+      title: "Team"
+      team1_name: "Mayra Rodríguez"
+      team1_role: "Founder, software developer"
+      team1_bio: "Mayra Rodríguez is a software developer with a focus on event-driven systems. At Gazpacho Dev, she leads the development of scalable and maintainable solutions that help our clients transform their processes and achieve their organizational goals."
+      team2_name: "Manuel Ortega"
+      team2_role: "Founder, Event Modeling and Event Sourcing Expert"
+      team2_bio: "Manuel Ortega is a software development professional with 15+ years of experience bridging product and engineering. With deep roots in OOP and DDD, he now focuses on Event Modeling and Event Sourcing to design clearer, more resilient systems. He is currently advancing an open-source, DCB-compatible, file-based event store to help make Event Sourcing more accessible. He brings a strong modeling mindset and a passion for aligning business and tech teams."
+      team3_name: "Adam Dymitruk"
+      team3_role: "Advisor, Founder and CEO of Adaptech Group, Creator of Event Modeling"
+      team3_bio: "Adam Dymitruk is the CEO of Adaptech Group and the creator of Event Modeling. With over three decades of experience in software development and architecture, Adam is an expert in event-driven systems and Event Sourcing. He has been instrumental in advancing these methodologies, particularly through his work on Event Modeling, which provides a visual and collaborative approach to system design. Adam is a frequent speaker at international conferences and has contributed significantly to the evolution of responsible, efficient system design and implementation in the software industry."
+      team4_name: "Martin Dilger"
+      team4_role: "Advisor, CEO of Nebulit GmbH, Author 'Understanding Eventsourcing', Event Sourcing Expert"
+      team4_bio: "Martin Dilger is the CEO of Nebulit GmbH. He works as an event modeling expert and supports customers in the planning and implementation of event-based systems with event modeling, event sourcing and Axon. He has worked as an IT architect and consultant in various industries for more than 15 years. He is the author of the book 'Understanding Eventsourcing' and an expert in event modeling and event sourcing of complex systems. Martin regularly conducts trainings and workshops with teams and passes on his knowledge."
+    contact:
+      title: "Tell us about your project"
+      phone: "Phone"
+      email: "Email"
+    call_to_action_processes:
+      title: "Modernize your business and empower your team!"      
+  footer:
+    slogan: "Technology for digital and business transformation"
+    copyright: "Creative Commons, Some Rights Reserved"

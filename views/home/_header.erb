@@ -10,12 +10,31 @@
     </a>
     <div class="flex items-center">
       <div class="hidden lg:flex lg:gap-x-12">
-        <a href="#about" class="text-sm/6 font-semibold text-gray-900">Nosotros</a>
-        <a href="#services" class="text-sm/6 font-semibold text-gray-900">Servicios</a>
-        <a href="#team" class="text-sm/6 font-semibold text-gray-900">Equipo</a>
-        <a href="#contact" class="text-sm/6 font-semibold text-gray-900">Contacto</a>
+        <a href="#about" class="text-sm/6 font-semibold text-gray-900"><%= I18n.t('home.nav.about') %></a>
+        <a href="#services" class="text-sm/6 font-semibold text-gray-900"><%= I18n.t('home.nav.services') %></a>
+        <a href="#team" class="text-sm/6 font-semibold text-gray-900"><%= I18n.t('home.nav.team') %></a>
+        <a href="#contact" class="text-sm/6 font-semibold text-gray-900"><%= I18n.t('home.nav.contact') %></a>
       </div>
-      <div class="flex lg:hidden">
+      <div class="flex items-center gap-3 h-10 lg:ml-4">
+        <form action="/" method="get" class="flex items-center my-0 py-0 h-full">
+          <label for="locale" class="sr-only">Language</label>
+          <div class="relative">
+            <select
+              id="locale"
+              name="locale"
+              class="block appearance-none bg-white border border-gray-300 text-gray-900 px-4 pr-10 rounded leading-tight focus:outline-none focus:bg-white focus:border-blue-500 text-sm font-semibold self-center py-2"
+              onchange="this.form.submit()"
+            >
+              <option value="es" <%= (params[:locale] == 'es' || (!params[:locale] && I18n.locale.to_s == 'es')) ? 'selected' : '' %>>ES</option>
+              <option value="en" <%= (params[:locale] == 'en' || (!params[:locale] && I18n.locale.to_s == 'en')) ? 'selected' : '' %>>EN</option>
+            </select>
+            <div class="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 flex items-center text-gray-700">
+              <svg class="fill-current h-4 w-4" viewBox="0 0 20 20"><path d="M7 7l3-3 3 3m0 6l-3 3-3-3" /></svg>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="flex lg:hidden ml-4">
         <button id="open-mobile-menu" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
           <span class="sr-only">Abrir menú principal</span>
           <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
@@ -43,10 +62,10 @@
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
-              <a href="#about" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Nosotros</a>
-              <a href="#services" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Servicios</a>
-              <a href="#team" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Equipo</a>
-              <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contacto</a>
+              <a href="#about" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"><%= I18n.t('home.nav.about') %></a>
+              <a href="#services" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"><%= I18n.t('home.nav.services') %></a>
+              <a href="#team" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"><%= I18n.t('home.nav.team') %></a>
+              <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"><%= I18n.t('home.nav.contact') %></a>
             </div>
           </div>
         </div>
@@ -60,10 +79,10 @@
       <div class="block w-full lg:w-1/2 justify-center">
         <div>
           <h1 class="font-display text-3xl md:text-6xl font-medium tracking-tight text-balance text-neutral-950">
-            Tecnología para la transformación digital y de negocio
+            <%= I18n.t('home.header.title') %>
           </h1>
           <p class="text-neutral-600 text-md md:text-xl text-justify pr-10">
-            Desarrollamos soluciones a medida que optimizan procesos y flujos de información, mejorando la eficiencia y la toma de decisiones.
+            <%= I18n.t('home.header.description') %>
           </p>
         </div>
       </div>
@@ -72,20 +91,32 @@
         <ul>
           <li>
             <a href="#">
-              <h2 class="logo-font font-bold text-sm">Visión de Negocio</h2>
-              <p class="font-normal text-[1.2rem]" style="font-family: 'Reenie Beanie', cursive;">Analíticas potentes y trazabilidad integrada</p>
+              <h2 class="logo-font font-bold text-sm">
+                <%= I18n.t('home.header.sticky_notes.note1') %>
+              </h2>
+              <p class="font-normal text-[1.2rem]" style="font-family: 'Reenie Beanie', cursive;">
+                <%= I18n.t('home.header.sticky_notes.note1_description') %>
+              </p>
             </a>
           </li>
           <li>
             <a href="#">
-              <h2 class="logo-font font-bold text-sm">Preparados para el Futuro</h2>
-              <p class="font-normal text-[1.2rem]" style="font-family: 'Reenie Beanie', cursive;">Agrega funcionalidades fácilmente</p>
+              <h2 class="logo-font font-bold text-sm">
+                <%= I18n.t('home.header.sticky_notes.note2') %>
+              </h2>
+              <p class="font-normal text-[1.2rem]" style="font-family: 'Reenie Beanie', cursive;">
+                <%= I18n.t('home.header.sticky_notes.note2_description') %>
+              </p>
             </a>
           </li>
           <li>
             <a href="#">
-              <h2 class="logo-font font-bold text-sm">Reduce Costes y Correcciones</h2>
-              <p class="font-normal text-[1.2rem]" style="font-family: 'Reenie Beanie', cursive;">Una visión compartida elimina errores costosos</p>
+              <h2 class="logo-font font-bold text-sm">
+                <%= I18n.t('home.header.sticky_notes.note3') %>
+              </h2>
+              <p class="font-normal text-[1.2rem]" style="font-family: 'Reenie Beanie', cursive;">
+                <%= I18n.t('home.header.sticky_notes.note3_description') %>
+              </p>
             </a>
           </li>          
         </ul>
