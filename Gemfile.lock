@@ -1,37 +1,35 @@
+GIT
+  remote: https://github.com/ortegacmanuel/kroniko.git
+  revision: 13927e242193caa57c82f5edf66db52a1f97b7b9
+  specs:
+    kroniko (0.1.0)
+      fileutils
+      json
+      securerandom
+      thread
+
 GEM
   remote: https://rubygems.org/
   specs:
     base64 (0.3.0)
     concurrent-ruby (1.3.5)
-    date (3.4.1)
     dotenv (3.1.8)
+    fileutils (1.7.3)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
-    mail (2.8.1)
-      mini_mime (>= 0.1.1)
-      net-imap
-      net-pop
-      net-smtp
-    mini_mime (1.1.5)
+    json (2.13.2)
     multi_json (1.15.0)
     mustermann (3.0.3)
       ruby2_keywords (~> 0.0.1)
-    net-imap (0.5.9)
-      date
-      net-protocol
-    net-pop (0.1.2)
-      net-protocol
-    net-protocol (0.2.2)
-      timeout
-    net-smtp (0.5.1)
-      net-protocol
-    pony (1.13.1)
-      mail (>= 2.0)
+    nio4r (2.7.4)
+    puma (6.6.0)
+      nio4r (~> 2.0)
     rack (2.2.17)
     rack-protection (3.2.0)
       base64 (>= 0.1.0)
       rack (~> 2.2, >= 2.2.4)
     ruby2_keywords (0.0.5)
+    securerandom (0.4.1)
     sinatra (3.2.0)
       mustermann (~> 3.0)
       rack (~> 2.2, >= 2.2.4)
@@ -43,17 +41,19 @@ GEM
       rack-protection (= 3.2.0)
       sinatra (= 3.2.0)
       tilt (~> 2.0)
+    thread (0.2.2)
     tilt (2.6.0)
-    timeout (0.4.3)
 
 PLATFORMS
   ruby
   x86_64-linux
 
 DEPENDENCIES
+  bundler
   dotenv
   i18n
-  pony
+  kroniko!
+  puma (~> 6.0)
   sinatra (~> 3.0)
   sinatra-contrib (~> 3.0)
 

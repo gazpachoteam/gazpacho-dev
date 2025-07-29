@@ -3,7 +3,10 @@ require "sinatra/reloader" if development?
 require 'i18n'
 require 'i18n/backend/fallbacks'
 require 'dotenv/load'
-require 'pony'
+require 'bundler/setup'
+require 'kroniko'
+
+class EstudioSolicitado < Kroniko::Event; end
 
 helpers do
   def get_default_locale
@@ -17,21 +20,8 @@ I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
 I18n.load_path = Dir[File.join(settings.root, 'locales', '*.yml')]
 I18n.backend.load_translations
 
-# Configure Pony SMTP settings if environment variables are present
-if ENV['SMTP_ADDRESS']
-  Pony.options = {
-    via: :smtp,
-    via_options: {
-      address:              ENV['SMTP_ADDRESS'],
-      port:                 ENV['SMTP_PORT'] || '587',
-      enable_starttls_auto: true,
-      user_name:            ENV['SMTP_USER'],
-      password:             ENV['SMTP_PASSWORD'],
-      authentication:       :plain,
-      domain:               ENV['SMTP_DOMAIN'] || 'localhost'
-    }
-  }
-end
+# Initialize file-based event store
+EVENT_STORE = Kroniko::EventStore.new(ENV.fetch('EVENT_STORE_DIR', 'event_store'))
 
 before do
   I18n.locale = params[:locale] || get_default_locale
@@ -46,23 +36,14 @@ get '/estudio-ia' do
 end
 
 post '/estudio-ia/contact' do
-  nombre = params[:nombre]
-  email  = params[:email]
-  telefono = params[:telefono]
-  comentarios = params[:comentarios]
-
-  Pony.mail(
-    to: 'info@gazpacho.dev',
-    from: email || 'web@gazpacho.dev',
-    subject: "Contacto Cooperativa - #{nombre}",
-    body: <<~BODY
-      Nombre de la cooperativa: #{nombre}
-      Email: #{email}
-      Teléfono: #{telefono}
-      Comentarios:
-      #{comentarios}
-    BODY
-  )
+  EVENT_STORE.write(events: [EstudioSolicitado.new(
+    data: {
+      nombre: params[:nombre],
+      email: params[:email],
+      telefono: params[:telefono],
+      comentarios: params[:comentarios]
+    }
+  )])
 
   redirect to('/estudio-ia?enviado=true#contacto')
 end
