@@ -1,0 +1,108 @@
+<div class="min-h-screen flex flex-col">
+  <header id="main-header" class="whiteboard-bg px-4 md:px-8 pt-4 pb-2 flex justify-between items-center fixed top-0 left-0 w-screen z-10 h-14 transition-all duration-300">
+    <a href="/">
+      <div class="flex items-center">
+        <img id="main-logo" src="isologo-gazpacho.png" alt="Logo" class="h-10 w-10 mr-2 transition-all duration-300" />
+        <span class="logo-font tracking-tight text-[1.5rem] lg:text-[2rem]">
+          gazpacho dev
+        </span>
+      </div>
+    </a>
+    <div class="flex items-center">
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="#entregables" class="text-sm/6 font-semibold text-gray-900">¿Qué obtendrás?</a>
+        <a href="#ruta" class="text-sm/6 font-semibold text-gray-900">¿Cómo?</a>
+        <a href="#contacto" class="text-sm/6 font-semibold text-gray-900">¡Hablemos!</a>
+      </div>
+      <div class="flex lg:hidden ml-4">
+        <button id="open-mobile-menu" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Abrir menú principal</span>
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu backdrop and menu for smooth transitions -->
+    <div id="mobile-backdrop" class="fixed inset-0 z-40 bg-black bg-opacity-40 opacity-0 transition-opacity duration-500 pointer-events-none lg:hidden"></div>
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 transform translate-x-full opacity-0 transition-all duration-500 lg:hidden">
+      <div class="relative z-50">
+        <div class="flex items-center justify-between">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Gazpacho Dev</span>
+            <img class="h-10 w-auto" src="isologo-gazpacho.png" alt="" />
+          </a>
+          <button id="close-mobile-menu" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Cerrar menú</span>
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y divide-gray-500/10">
+            <div class="space-y-2 py-6">
+              <a href="#entregables" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">¿Qué obtendrás?</a>
+              <a href="#ruta" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Hoja de ruta</a>
+              <a href="#contacto" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contacto</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Hero with sticky notes -->
+  <section class="whiteboard-bg flex-1 flex items-center px-4 md:px-14 pt-20 lg:pt-0">
+    <div class="mx-auto flex flex-col md:flex-row lg:items-center lg:justify-between gap-8 w-full">
+      <!-- Left: Hero text -->
+      <div class="block w-full lg:w-1/2 justify-center">
+        <div>
+          <h1 class="font-display text-3xl md:text-6xl font-medium tracking-tight text-balance text-neutral-950">
+            Impulsa tu organización con <span class="text-blue-600">Inteligencia Artificial</span>
+          </h1>
+          <p class="mb-4 text-neutral-600 text-md md:text-xl text-justify pr-10">
+            ¿Te estás preguntando cómo integrar sistemas expertos, IA o Machine Learning en tus procesos? Solicita gratis nuestros estudio inicial de oportunidades y descubre dónde y cómo la IA puede impulsar tu organización.
+          </p>
+          <a href="#contacto" class="bg-[#006e00ff] text-white px-4 py-3 rounded-md hover:bg-[#669600ff] transition">
+            Solicitar estudio inicial gratuito
+          </a>
+        </div>
+      </div>
+      <!-- Right: Sticky notes -->
+      <div class="block w-full lg:w-1/2 justify-center">
+        <ul>
+          <li>
+            <a href="#">
+              <h2 class="logo-font font-bold text-sm">
+                Mapa visual gratuito
+              </h2>
+              <p class="font-normal text-[1.2rem]" style="font-family: 'Reenie Beanie', cursive;">
+                Llévate un esquema claro de tu flujo de trabajo, sin coste.
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <h2 class="logo-font font-bold text-sm">
+                Costes y plazos fijos
+              </h2>
+              <p class="font-normal text-[1.2rem]" style="font-family: 'Reenie Beanie', cursive;">
+                Presupuesto cerrado antes de empezar: sin sobrecostes, sin sorpresas.
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <h2 class="logo-font font-bold text-sm">
+                Tú decides
+              </h2>
+              <p class="font-normal text-[1.2rem]" style="font-family: 'Reenie Beanie', cursive;">
+                Implementa solo si el plan te convence.
+              </p>
+            </a>
+          </li>          
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>

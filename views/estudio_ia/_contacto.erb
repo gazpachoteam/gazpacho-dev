@@ -1,0 +1,44 @@
+<section id="contacto" class="bg-[#9cc5a1] isolate relative px-6 py-24 sm:py-32 lg:px-8">
+
+  <div class="mx-auto max-w-2xl text-center">
+    <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">¡Hablemos!</h2>
+    <p class="mt-2 text-lg/8 text-gray-700">Solicita tu <span class="font-bold">estudio inicial de oportunidades</span> hoy mismo — es gratuito y obtendrás valor desde el primer momento..</p>
+  </div>
+
+  <form action="/estudio-ia/contact" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+
+    <% if params[:enviado] == 'true' %>
+      <p class="mb-6 rounded-md bg-green-50 px-4 py-3 text-center text-sm text-green-700">¡Gracias! Hemos recibido tu solicitud.</p>
+    <% end %>
+
+    <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+      <div class="sm:col-span-2">
+        <label for="nombre" class="block text-sm/6 font-semibold text-gray-900">Nombre de tu organización</label>
+        <div class="mt-2.5">
+          <input id="nombre" name="nombre" type="text" required class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+        </div>
+      </div>
+      <div class="sm:col-span-2">
+        <label for="email" class="block text-sm/6 font-semibold text-gray-900">Correo electrónico</label>
+        <div class="mt-2.5">
+          <input id="email" name="email" type="email" required class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+        </div>
+      </div>
+      <div class="sm:col-span-2">
+        <label for="telefono" class="block text-sm/6 font-semibold text-gray-900">Teléfono de contacto</label>
+        <div class="mt-2.5">
+          <input id="telefono" name="telefono" type="tel" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+        </div>
+      </div>
+      <div class="sm:col-span-2">
+        <label for="comentarios" class="block text-sm/6 font-semibold text-gray-900">Comentarios (opcional)</label>
+        <div class="mt-2.5">
+          <textarea id="comentarios" name="comentarios" rows="4" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="mt-10">
+      <button type="submit" class="block rounded-md bg-[#006e00ff] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#669600ff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Enviar</button>
+    </div>
+  </form>
+</section>  
