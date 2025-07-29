@@ -5,6 +5,7 @@ require 'i18n/backend/fallbacks'
 require 'dotenv/load'
 require 'bundler/setup'
 require 'kroniko'
+require 'fileutils'
 
 class EstudioSolicitado < Kroniko::Event; end
 
@@ -21,7 +22,9 @@ I18n.load_path = Dir[File.join(settings.root, 'locales', '*.yml')]
 I18n.backend.load_translations
 
 # Initialize file-based event store
-EVENT_STORE = Kroniko::EventStore.new(ENV.fetch('EVENT_STORE_DIR', 'event_store'))
+store_dir = ENV.fetch('EVENT_STORE_DIR', File.join(__dir__, 'event_store'))
+FileUtils.mkdir_p(store_dir) unless Dir.exist?(store_dir)
+EVENT_STORE = Kroniko::EventStore.new(store_dir)
 
 before do
   I18n.locale = params[:locale] || get_default_locale
